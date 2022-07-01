@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "fullName": "Yolanda Baleni",
+    "address": "3 waterfoot road",
+    "phoneNumber": "333-962-7516",
+    "email": "yolie797@gmail.com"
+  },
+  {
+    "id": 2,
+    "fullName": "Mfundo Lufele",
+    "address": "4 tall town",
+    "phoneNumber": "333-962-7516",
+    "email": "marengea27@gmail.com"
+  },
+  {
+    "id": 3,
+    "fullName": "Acwenga Baleni",
+    "address": "11 lesly road",
+    "phoneNumber": "333-962-7516",
+    "email": "mellow@email.com"
+  }
+ 
+]
