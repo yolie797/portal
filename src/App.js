@@ -8,16 +8,16 @@ import EditableRow from "./components/editEmp";
 const App = () => {
   const [contacts, setContacts] = useState(data);
   const [addFormData, setAddFormData] = useState({
-    fullName: "",
-    address: "",
+    firstName: "",
+    lastName: "",
     phoneNumber: "",
     email: "",
   });
 
 
   const [editFormData, setEditFormData] = useState({
-    fullName: "",
-    address: "",
+    firstName: "",
+    lastName: "",
     phoneNumber: "",
     email: "",
   });
@@ -53,8 +53,8 @@ const App = () => {
 
     const newContact = {
       id: nanoid(),
-      fullName: addFormData.fullName,
-      address: addFormData.address,
+      firstName: addFormData.firstName,
+      lastName: addFormData.lastName,
       phoneNumber: addFormData.phoneNumber,
       email: addFormData.email,
     };
@@ -68,8 +68,8 @@ const App = () => {
 
     const editedContact = {
       id: editContactId,
-      fullName: editFormData.fullName,
-      address: editFormData.address,
+      firstName: editFormData.firstName,
+      lastName: editFormData.lastName,
       phoneNumber: editFormData.phoneNumber,
       email: editFormData.email,
     };
@@ -89,8 +89,8 @@ const App = () => {
     setEditContactId(contact.id);
 
     const formValues = {
-      fullName: contact.fullName,
-      address: contact.address,
+      firstName: contact.firstName,
+      lastName: contact.lastName,
       phoneNumber: contact.phoneNumber,
       email: contact.email,
     };
@@ -113,13 +113,15 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
+  <div className="app-container">
+      <div className="secContainer">
+      <h2>Employee List</h2>
       <form onSubmit={handleEditFormSubmit}>
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Address</th>
+              <th>First Name</th>
+              <th>Last Name</th>
               <th>Phone Number</th>
               <th>Email</th>
               <th>Actions</th>
@@ -147,42 +149,49 @@ const App = () => {
         </table>
       </form>
 
-      <h2>Add a Contact</h2>
+      </div>
+
+
+      <div className="container">
+      <h2>New Employee</h2>
       <form onSubmit={handleAddFormSubmit}>
+        <label>Full Name</label>
         <input
           type="text"
-          name="fullName"
+          name="firstName"
           required="required"
           placeholder="Enter a name..."
-          onChange={handleAddFormChange}
-        />
+          onChange={handleAddFormChange}></input> 
+          <label>Last Name</label>
         <input
           type="text"
-          name="address"
+          name="lastName"
           required="required"
           placeholder="Enter the last name..."
-          onChange={handleAddFormChange}
-        />
+          onChange={handleAddFormChange}/>
+          <label>Phone Number</label>
          <input
           type="text"
           name="phoneNumber"
           required="required"
           placeholder="Enter a phone number..."
-          onChange={handleAddFormChange}
-        />
+          onChange={handleAddFormChange}/>
+          <label>Email</label>
         <input
           type="email"
           name="email"
           required="required"
           placeholder="Enter an email..."
-          onChange={handleAddFormChange}
-        />
-        <button type="submit">Add</button>
+          onChange={handleAddFormChange}/><br/>
+     
+        <button type="submit">Add Employee</button>
       </form>
     </div>
-    
+    </div>
+ 
   );
-};
+                };
+
 
 export default App;
 
