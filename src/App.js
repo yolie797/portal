@@ -5,6 +5,9 @@ import data from "./mock-data.json";
 import ReadOnlyRow from "./components/emp";
 import EditableRow from "./components/editEmp";
 
+
+
+
 const App = () => {
   const [contacts, setContacts] = useState(data);
   const [addFormData, setAddFormData] = useState({
@@ -48,8 +51,9 @@ const App = () => {
     setEditFormData(newFormData);
   };
 
-  const handleAddFormSubmit = (event) => {
+  const handleAddFormSubmit =async (event) => {
     event.preventDefault();
+    setMessage("");
 
     const newContact = {
       id: nanoid(),
@@ -58,7 +62,8 @@ const App = () => {
       phoneNumber: addFormData.phoneNumber,
       email: addFormData.email,
     };
-
+    console.log(newContact);
+   
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
   };
