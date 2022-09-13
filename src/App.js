@@ -53,7 +53,7 @@ const App = () => {
 
   const handleAddFormSubmit =async (event) => {
     event.preventDefault();
-    setMessage("");
+  
 
     const newContact = {
       id: nanoid(),
